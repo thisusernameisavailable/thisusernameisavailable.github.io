@@ -1,0 +1,10 @@
+p {
+  font-family: "Times New Roman", Times, serif;
+}
+#title {
+    color: aqua;
+    font-size: 24px;
+}
+#otherCash {
+    background-color: blue;
+}

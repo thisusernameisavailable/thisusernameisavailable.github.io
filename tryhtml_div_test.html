@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>James' Clicker</title>
+    <link rel="stylesheet" type="text/css" href="jamesclicker.css">
+</head>
+<body>
+    <p id="title" onclick="myFunction()" onmouseover="myFunction()">This is your money.</p>
+    <div id="otherCash" onmouseover="myFunction()" onclick="Othercash()">
+        <p> hello </p>
+    </div>
+    <button onclick="upButton()">upgrade costs 100 (only works twice)</button>
+    <button onclick="upButton2()">upgrade2 costs 1000</button>
+    <h1 onclick="ach()"> Acheivements</h1>
+    <p id="a1"> </p>
+    <script>
+var Upgrades = 1;
+var Upgrades2 = 1;
+var Yourothercash = 0;
+var cash = 10;
+function Othercash() {
+    document.getElementById("title").innerHTML = cash + " dollars      " + Yourothercash + " Other Dollars";
+    if (upgrades2 > 1){
+        Yourothercash++;
+    }
+}
+function myFunction() {
+    document.getElementById("title").innerHTML = cash + " dollars      " + Yourothercash + " Other Dollars";
+    cash++;
+    acheivements();
+    if (Upgrades > 1){
+        cash += 2;
+    }
+    if (Upgrades > 2){
+        cash += 4;
+    }
+    if (Upgrades2 > 1){
+       cash += 8;
+    }
+ }
+ 
+function acheivements() {
+   if (cash > 68) {
+     document.getElementById("a1").innerHTML = "69 dollars lol";
+   }
+}  
+function upButton() {
+  if (cash > 100) {
+    cash -= 100
+    document.getElementById("title").innerHTML = cash + "$";
+    Upgrades++;
+    }
+ }
+function upButton2() {
+    if (cash > 1000) {
+        cash -= 1000;
+        document.getElementById("title").innerHTML = cash + "$";
+        Upgrades2++;
+        Yourothercash++;
+    }
+}
+
+function ach() {
+    cash += 15;
+}
+    </script>
+
+</body>
+</html>
