@@ -1,3 +1,3 @@
 # hostmeclick
 A clicker game
-[Play the clicker game here!](thisusernameisavailable.github.io/index.html "Clicker Game")
+[Play the clicker game here!](/index.html "Clicker Game")
