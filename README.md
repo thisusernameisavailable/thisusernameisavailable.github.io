@@ -1,2 +1,2 @@
 # hostmeclick
-A clicker ga,e
+A clicker game
