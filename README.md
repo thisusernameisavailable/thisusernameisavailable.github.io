@@ -1,3 +1,3 @@
-# hostmeclick
-A clicker game
-[Play the clicker game here!](/index.html "Clicker Game")
+# The Great Game Collection
+A clicker game, so far...
+[Play games here!](/index.html "Clicker Game")
