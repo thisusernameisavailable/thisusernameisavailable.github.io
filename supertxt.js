@@ -24,7 +24,7 @@
         blocks: [
             [' ', 'Include text: %s with id: %s', 'AddText', "Hello World!", "hello"],
             [' ', 'Change font of id: %s to: %m.fonts', 'FontChange', 1, 'Sans Serif'],
-        ]
+        ],
         menus: {
             fonts: ['Sans Serif', 'Serif', 'Comic Sans'],
         },
