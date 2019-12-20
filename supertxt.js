@@ -10,10 +10,13 @@
     };
     ext.AddText = function(added, id){
         let add = document.createElement('div');
-        div.className = "added";
-        div.innerHTML = "<p id=" + id + ">" + added + "</p>
+        div.id = "added";
+        div.innerHTML = "<p id=" + id + ">" + added + "</p>";
         i++;
-  document.body.append(div);
+        document.body.append(div);
+    }
+    ext.FontChange = function(id, font){
+        document.getElementById(id).style.fontFamily = font;
     }
 
     // Block and block menu descriptions
