@@ -21,10 +21,10 @@
     };
     ext.AddText = function(added, id){
         let add = document.createElement('div');
-        div.className = "added";
-        div.innerHTML = "<p id=" + id + ">" + added + "</p>";
+        add.className = "added";
+        add.innerHTML = "<p id=" + id + ">" + added + "</p>";
         i++;
-  document.body.append(div);
+  document.body.append(add);
     };
 
     // Block and block menu descriptions
