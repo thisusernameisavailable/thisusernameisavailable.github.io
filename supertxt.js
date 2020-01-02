@@ -20,7 +20,7 @@
         return {status: 2, msg: 'Ready'};
     };
     ext.AddText = function(added, id){
-        document.getElementById("title").innerHtml = "<p id=/"" + id + "/">" + added + "</p>";
+        document.getElementById("title").innerHtml = "<p id=\"" + id + "\">" + added + "</p>";
         i++;
     };
 
@@ -36,5 +36,5 @@
     };
 
     // Register the extension
-    ScratchExtensions.register('No Tether', descriptor, ext);
+    ScratchExtensions.register('DOM Scratch', descriptor, ext);
 })({});
