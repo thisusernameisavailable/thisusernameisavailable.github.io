@@ -20,11 +20,8 @@
         return {status: 2, msg: 'Ready'};
     };
     ext.AddText = function(added, id){
-        let add = document.createElement('div');
-        add.className = "added";
-        document.write("<p id=/"" + id + "/">" + added + "</p>");
+        document.getElementById("title").innerHtml = "<p id=/"" + id + "/">" + added + "</p>";
         i++;
-  document.body.append(add);
     };
 
     // Block and block menu descriptions
