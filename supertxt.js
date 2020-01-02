@@ -20,7 +20,7 @@
         return {status: 2, msg: 'Ready'};
     };
     ext.AddText = function(added, id){
-        document.getElementById("title").outerHTML = "<p id=\"" + id + "\">" + added + "</p>";
+        document.write = "<p id=\"" + id + "\">" + added + "</p>";
         i++;
     };
 
