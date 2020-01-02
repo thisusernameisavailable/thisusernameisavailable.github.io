@@ -22,7 +22,7 @@
     ext.AddText = function(added, id){
         let add = document.createElement('div');
         add.className = "added";
-        document.write("<p id=" + id + ">" + added + "</p>");
+        document.write("<p id=/"" + id + "/">" + added + "</p>");
         i++;
   document.body.append(add);
     };
