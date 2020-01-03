@@ -19,10 +19,11 @@
     ext._getStatus = function() {
         return {status: 2, msg: 'Ready'};
     };
-    ext.AddText = function(added, id){
+    ext.AddText = function(added, id, place){
+        const myPlace = 0 - 9990 - place  
         const paragraph = document.createElement('p') // Creates a <p> element
         paragraph.id = id // Set the id attribute
-        paragraph.style.top = '-9990px' // Set the CSS in the style attribute
+        paragraph.style.top = myPlace + 'px' // Set the CSS in the style attribute
         paragraph.innerHTML = added // Set the html inside of the <p> element
         document.body.appendChild(paragraph) // Add the <p> element to the <body>
         i++;
@@ -31,7 +32,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [' ', 'Include text: %s with id: %s', 'AddText', "Hello World!", "hello"],
+            [' ', 'Include text: %s with id: %s place: %n', 'AddText', "Hello World!", "hello"],
             [' ', 'Change font of id: %s to: %m.fonts', 'FontChange', 1, 'Sans Serif'],
         ],
         menus: {
