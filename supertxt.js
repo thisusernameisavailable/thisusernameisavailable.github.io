@@ -20,8 +20,11 @@
         return {status: 2, msg: 'Ready'};
     };
     ext.AddText = function(added, id){
-        document.write ("<p id=\"" + id + "\" style=\"top: -9990px\">" + added + "</p>");
-        showPage(editorId);
+        const paragraph = document.createElement('p') // Creates a <p> element
+        paragraph.id = id // Set the id attribute
+        paragraph.style.top = '-9990px' // Set the CSS in the style attribute
+        paragraph.innerHTML = added // Set the html inside of the <p> element
+        document.body.appendChild(paragraph) // Add the <p> element to the <body>
         i++;
     };
 
