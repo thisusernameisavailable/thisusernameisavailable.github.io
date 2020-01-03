@@ -20,7 +20,8 @@
         return {status: 2, msg: 'Ready'};
     };
     ext.AddText = function(added, id){
-        document.write ("<p id=\"" + id + "\">" + added + "</p>");
+        document.write ("<p id=\"" + id + "\" style=\"top: -9990px\">" + added + "</p>");
+        showPage(editorId);
         i++;
     };
 
