@@ -25,7 +25,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            [' ', 'Include text: %s with id: %s x: %n y: %n', 'AddText', "Hello World!", "hello", "0", "0"],
+            [' ', 'Include text: %s with id: %s x: %n y: %n', 'AddText', "Hello World!", "Hello", "0", "0"],
             [' ', 'Change font of id: %s to: %m.fonts', 'FontChange', 1, 'Sans Serif'],
         ],
         menus: {
