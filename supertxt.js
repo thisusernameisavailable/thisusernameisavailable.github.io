@@ -20,7 +20,7 @@
         return {status: 2, msg: 'Ready'};
     };
     ext.AddText = function(added, id, place){
-        const myPlace = 0 - 9990 - place  
+        const myPlace = place  
         const paragraph = document.createElement('p') // Creates a <p> element
         paragraph.id = id // Set the id attribute
         paragraph.style.top = myPlace + 'px' // Set the CSS in the style attribute
