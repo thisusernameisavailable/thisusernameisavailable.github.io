@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Simple Timer</title>
+  </head>
+  <body>
+      <h1 id="timer">Simple Timer</h1>
+      <input type="text" id="time" value="15:00">
+      <button type="button"  onclick="time();" id="start">Start</button>
+      <script>
+          var timerRun;
+          var timeLeft;
+          var timerRunning = false;
+          function tick() {
+              timeLeft[1] -= 1;
+              if (timeLeft[1] < 0) {
+                  timeLeft[0] -= 1;
+                  timeLeft[1] = 59; 
+              }
+              if (timeLeft[0] < 0) {
+                  clearInterval(timerRun);
+                  alert("Timer is done!");
+                  timerRunning = false;
+                  document.getElementById("timer").innerHTML = "Simple Timer";
+              }
+              if (timeLeft[1] < 10) {
+                  timeLeft[1] = "0" + timeLeft[1];
+              }
+              document.getElementById("timer").innerHTML = timeLeft.join(":");
+              if (timerRunning == false) {
+                  document.getElementById("timer").innerHTML = "Simple Timer";
+              }
+          }
+          function time() {
+                clearInterval(timerRun)
+                timerRun = setInterval(tick, 1000);
+                timeLeft = document.getElementById("time").value.split(":");
+                timerRunning = true;
+          }
+          //document.getElementById("start").onclick = time();
+      </script>
+  </body>
+</html>
