@@ -50,9 +50,11 @@
                   clearInterval(timerRun);
                   relaxing.pause();
                   alarm = new Audio('beep.wav');
-                  alarm.volume = 100;
+                  alarm.volume = 1;
                   alarm.play();
-                  alert("Timer is done!");
+                  alarm.loop = true;
+                  alert("Timer is done! Stop beep");
+                  alarm.pause();
                   timerRunning = false;
                   document.getElementById("timer").innerHTML = "Simple Timer";
               }
