@@ -37,6 +37,7 @@
       <script>
           var timerRun;
           var timeLeft;
+          var relaxing;
           var timerRunning = false;
           function tick() {
               timeLeft[1] -= 1;
@@ -60,6 +61,7 @@
           }
           function time() {
                 clearInterval(timerRun)
+                relaxing = new Audio('bensound_relaxing.mp3');
                 timerRun = setInterval(tick, 1000);
                 timeLeft = document.getElementById("time").value.split(":");
                 timerRunning = true;
