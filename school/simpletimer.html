@@ -47,6 +47,7 @@
               }
               if (timeLeft[0] < 0) {
                   clearInterval(timerRun);
+                  relaxing.pause();
                   alert("Timer is done!");
                   timerRunning = false;
                   document.getElementById("timer").innerHTML = "Simple Timer";
@@ -61,13 +62,15 @@
           }
           function time() {
                 clearInterval(timerRun)
-                relaxing = new Audio('bensound_relaxing.mp3');
+                relaxing = new Audio('bensound-relaxing.mp3');
+                relaxing.play();
+                relaxing.loop = true;
                 timerRun = setInterval(tick, 1000);
                 timeLeft = document.getElementById("time").value.split(":");
                 timerRunning = true;
           }
 
       </script>
-      <p id="page-sizer">Made by me</p>
+    <p id="page-sizer">Made by me<br>Music by bensound</p>
   </body>
 </html>
