@@ -49,6 +49,8 @@
               if (timeLeft[0] < 0) {
                   clearInterval(timerRun);
                   relaxing.pause();
+                  alarm = new Audio('beep.wav');
+                  alarm.play();
                   alert("Timer is done!");
                   timerRunning = false;
                   document.getElementById("timer").innerHTML = "Simple Timer";
@@ -72,6 +74,6 @@
           }
 
       </script>
-    <p id="page-sizer">Made by me<br>Music by bensound</p>
+    <p id="page-sizer">Made by me<br>Music by bensound<br>Alarm sound by me using beepbox</p>
   </body>
 </html>
