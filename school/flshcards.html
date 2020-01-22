@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Flash cards</title>
+        <link rel="stylesheet" type="text/css" href="flashcardsstyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Baskervville|Gupter&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="body">
+        <p id="question">This is where the question shows up</p>
+        <p id="ans">This is where the result will show up</p>
+        <p id="score">Current Score: 0</p>
+        <button type="button" id="true">True</button>
+        <button type="button" id="false">False</button>
+        <button type="button" id="create">Create a question!</button>
+        <input type="file" id="load" onchange="load(event)" style="display: none;"><br>
+        <button onclick="document.getElementById('load').click()">Load a file</button><br>
+        <button onmouseup="save()" id="link">Save</button> 
+        <script>
+            var i = 0;
+            var questions = ["Freebie! Press False."];
+            var answer = [false];
+            var lastPress;
+            var score = 0;
+            document.getElementById("question").innerHTML = questions[i];
+            function itsTrue() {
+                lastPress = true;
+            }
+            function itsFalse() {
+                lastPress = false;
+            }
+            function getRndInt(min, max) {
+                return Math.floor(Math.random() * (max - min) ) + min;
+            }
+            function load(event) {
+                var input = event.target;
+                var reader = new FileReader();
+                reader.onload = function(){
+                    var text = reader.result;
+                    var splitText = text.split("~");
+                    questions = splitText[0].split("`");
+                    answer = splitText[1].split("`");
+                };
+               reader.readAsText(input.files[0]);
+            }
+            function getAns() {
+                if (((answer[i] == true) || answer[i] == "true") == lastPress) {
+                    document.getElementById("ans").innerHTML = "You're correct! The answer was " + lastPress;
+                    score += 10;
+                    document.getElementById("body").className="none";
+                    document.getElementById("body").className="green";
+                }
+                else {
+                    document.getElementById("ans").innerHTML = "We're sorry, but that is not correct. You said " + lastPress + ". The answer was " + answer[i];
+                    document.getElementById("body").className="none";
+                    document.getElementById("body").className="red";
+                    score -= 5;
+                }
+                i = getRndInt(0, questions.length);
+                document.getElementById("question").innerHTML = (i + 1) + ": " + questions[i];
+                document.getElementById("score").innerHTML = "Current score: " + score;
+            }
+            function newQuestion() {
+                var newAsk = prompt("What is the question?");
+                var newAns = confirm("Is the answer true?");
+                questions.push(newAsk);
+                answer.push(newAns);
+            }
+            document.getElementById("true").onclick = function(){itsTrue(); getAns();};
+            document.getElementById("false").onclick = function(){itsFalse(); getAns();};
+            document.getElementById("create").onclick = function(){newQuestion();};
+            window.URL = window.webkitURL || window.URL;
+            window.BlobBuilder = window.Blob;
+            function save() {
+                var cardFile = questions.join("`") + "~" + answer.join("`"); //In the append method next, it has to be a string
+              var file = new Blob([cardFile], {type: "text/plain"});     
+                var a = document.createElement('a');
+                a.href = window.URL.createObjectURL(file);
+                a.download = prompt("Filename") + '.txt';
+                a.textContent = 'Download file!';
+                document.getElementById("link").appendChild(a);
+                a.click();
+                document.getElementById("link").removeChild(a);
+            }
+            
+            </script>
+        </div>
+    </body>
+</html>
