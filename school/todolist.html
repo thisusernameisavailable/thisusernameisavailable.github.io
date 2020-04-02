@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>To Do</title>
+    <link rel="stylesheet" type="text/css" href="todostyle.css">
+  </head>
+  <body>
+        <p id="nav"><a href="file:///home/chronos/u-491122caed0f92038b1d833b735c8fdfee55a406/MyFiles/HTML/myfirstgame_structure.html">Game</a>  <a href="file:///home/chronos/u-491122caed0f92038b1d833b735c8fdfee55a406/MyFiles/HTML/todolist.html">To Do</a>  <a href="file:///home/chronos/u-491122caed0f92038b1d833b735c8fdfee55a406/MyFiles/HTML/parser.html">Text Adventure</a>  <a href="file:///home/chronos/u-491122caed0f92038b1d833b735c8fdfee55a406/MyFiles/HTML/simpletimer.html">Timer</a>  <a href="file:///home/chronos/u-491122caed0f92038b1d833b735c8fdfee55a406/MyFiles/HTML/flshcards.html">Flashcards</a></p>
+    <input id="titleName">
+    <button onclick="titleUpdate()"> Set title</button>
+    <br>
+    <br>
+    <div id="listBuild">
+    <textarea id="add">Do Something</textarea> 
+    <button onclick="push()">Add</button>
+  <p id="title"></p>
+    <ul id="list">  
+    </ul>
+    </div>
+    <script>
+      const text = document.getElementById("add");
+            const title = document.getElementById("titleName");
+const todolist = document.getElementById("list");
+function push() {
+  todolist.innerHTML += "<li><em>" + encodeHTML(text.value) +"</em>&nbsp<a href='javascript:void(0)' onclick='remove(this)' class='hello'> ✓ </a></li>";
+}
+function remove(link) { 
+    link.parentNode.parentNode.removeChild(link.parentNode);
+ return false;
+}
+      function encodeHTML(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+}
+      function titleUpdate() {document.getElementById('title').innerHTML = title.value;}
+
+      </script>
+  </body>
+</html>
